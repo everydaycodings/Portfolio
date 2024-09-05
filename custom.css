@@ -1,0 +1,27 @@
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: #4ade80;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typewriter-text {
+  overflow: hidden; /* Ensures text stays within container */
+  border-right: 0.15em solid rgba(255, 255, 255, 0.75); /* Cursor effect */
+  white-space: nowrap; /* Prevents text from wrapping */
+  margin: 0 auto; /* Keeps the text centered */
+  letter-spacing: 0.15em; /* Adds some spacing between letters */
+  animation: typewriter 3.5s steps(40, end) 1s 1 normal both,
+    blinkCursor 500ms steps(40, end) infinite;
+}
