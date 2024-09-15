@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body class="bg-stone-950 text-white mb-80" style="font-family: 'Source Code Pro', monospace;">
+
+    <nav class=" w-full z-20 top-0 start-0">
+        <div
+            class="max-w-screen-xl flex flex-wrap items-center justify-between my-5 mx-8 sm:my-10 sm:mx-8 md:mx-16 md:my-10 lg:mx-20 lg:my10">
+            <a href="#" class="flex items-center">
+                <p class="self-center text-2xl" style="font-family: 'Chakra Petch', sans-serif;">
+                    <span>Everyday</span><span class="text-green-400">codings</span>
+                </p>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="hidden md:block  text-black  font-medium rounded-lg text-sm px-4 py-2 text-center bg-green-400 hover:bg-green-500 ">Get
+                    started</button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white r md:p-0 hover:text-green-400 hover:underline-offset-3"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="experience.html"
+                            class="block py-2 px-3 text-white r md:p-0 hover:text-green-400 hover:underline-offset-3">Code
+                            Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="resume.html"
+                            class="block py-2 px-3 text-white r md:p-0 hover:text-green-400 hover:underline-offset-3">Resume</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white r md:p-0 hover:text-green-400 hover:underline-offset-3">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="contact-form" class="flex mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-28 lg:mx-20 lg:mt-28">
+        <div class="w-full sm:w-2/3 md:w-1/2 p-8 bg-neutral-900/75 rounded-lg shadow-lg">
+            <p class="text-green-400 text-3xl font-bold">Let's Work Together</p>
+            <p class="text-gray-300 text-sm mt-4 leading-relaxed">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s.
+            </p>
+
+            <!-- Name Input -->
+            <div class="input-section mt-8">
+                <label for="name" class="text-gray-400 text-sm">Name</label>
+                <input
+                    class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                    type="text" name="name" id="name" placeholder="Enter your name" aria-label="Enter your name">
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-section mt-6">
+                <label for="email" class="text-gray-400 text-sm">Email</label>
+                <input
+                    class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                    type="email" name="email" id="email" placeholder="Enter your email" aria-label="Enter your email">
+            </div>
+
+            <!-- Phone Number Input -->
+            <div class="input-section mt-6">
+                <label for="phone" class="text-gray-400 text-sm">Phone Number</label>
+                <input
+                    class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                    type="tel" name="phone" id="phone" placeholder="Enter your phone number"
+                    aria-label="Enter your phone number">
+            </div>
+            <!-- Message Textarea -->
+            <div class="input-section mt-6">
+                <label for="message" class="text-gray-400 text-sm">Message</label>
+                <textarea
+                    class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                    name="message" id="message" rows="5" placeholder="Enter your message"
+                    aria-label="Enter your message"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <button
+                class="mt-6 w-full p-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition duration-300 ease-in-out shadow-lg">
+                Send Message
+            </button>
+        </div>
+        <div class="w-full md:w-1/2 mt-10 md:mt-0 md:ml-10">
+            <div
+                class="flex flex-col items-start justify-center p-8 bg-neutral-900/75 rounded-lg shadow-lg text-gray-300 space-y-6">
+                <!-- Email Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-stone-950 rounded-full">
+                        <svg class="w-6 h-6 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.999 3c0-.551.449-1 1-1h16c.552 0 1 .449 1 1v18c0 .551-.448 1-1 1H3.999c-.552 0-1-.449-1-1V3zm9 10.5c-.055.018-.11.038-.167.038H11.165c-.055 0-.11-.02-.167-.038l-8-4c-.033-.015-.063-.035-.096-.052v10.552h16V9.448c-.034.017-.064.037-.097.052l-8 4zm7.5-5.448L12.501 11.7 4.499 8.052V5h14v2.052z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm">Primary Email</p>
+                        <p class="text-lg font-semibold">everydaycodings@email.com</p>
+                    </div>
+                </div>
+            
+                <!-- Second Email Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-stone-950 rounded-full">
+                        <svg class="w-6 h-6 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.999 3c0-.551.449-1 1-1h16c.552 0 1 .449 1 1v18c0 .551-.448 1-1 1H3.999c-.552 0-1-.449-1-1V3zm9 10.5c-.055.018-.11.038-.167.038H11.165c-.055 0-.11-.02-.167-.038l-8-4c-.033-.015-.063-.035-.096-.052v10.552h16V9.448c-.034.017-.064.037-.097.052l-8 4zm7.5-5.448L12.501 11.7 4.499 8.052V5h14v2.052z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm">Secondary Email</p>
+                        <p class="text-lg font-semibold">kumarsaksham1891@email.com</p>
+                    </div>
+                </div>
+
+                <!-- Twitter Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-stone-950 rounded-full">
+                        <svg class="w-6 h-6 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M24 4.557a9.94 9.94 0 01-2.828.775 4.937 4.937 0 002.165-2.723c-.951.563-2.005.974-3.127 1.195a4.92 4.92 0 00-8.384 4.482 13.963 13.963 0 01-10.141-5.15 4.822 4.822 0 00-.666 2.475 4.92 4.92 0 002.19 4.107 4.903 4.903 0 01-2.228-.616v.061a4.926 4.926 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.926 4.926 0 004.602 3.417A9.869 9.869 0 010 21.54a13.945 13.945 0 007.548 2.212c9.142 0 14.307-7.721 14.307-14.426 0-.22-.005-.44-.015-.659A10.257 10.257 0 0024 4.557z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm">Twitter</p>
+                        <p class="text-lg font-semibold"><a target="_blank" href="https://twitter.com/everydaycodings"
+                                class="text-blue-400">twitter.com/everydaycodings</a></p>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-stone-950 rounded-full">
+                        <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 20h-3v-10h3v10zm-1.5-11.267c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.267h-3v-5.482c0-1.307-.026-2.989-1.82-2.989-1.823 0-2.103 1.424-2.103 2.895v5.576h-3v-10h2.881v1.367h.042c.401-.759 1.378-1.557 2.838-1.557 3.035 0 3.597 2.003 3.597 4.61v5.58z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm">LinkedIn</p>
+                        <p class="text-lg font-semibold"><a target="_blank" href="https://linkedin.com/in/kumar-saksham1891"
+                                class="text-blue-600">linkedin.com/in/kumar-saksham1891</a></p>
+                    </div>
+                </div>
+
+                <!-- GitHub Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-stone-950 rounded-full">
+                        <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.85 10.91.57.1.78-.25.78-.55v-1.93c-3.19.69-3.87-1.54-3.87-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.65 0-1.25.44-2.28 1.16-3.08-.12-.28-.5-1.43.1-2.98 0 0 .94-.3 3.08 1.17.9-.25 1.86-.37 2.81-.37.95 0 1.91.12 2.81.37 2.14-1.47 3.08-1.17 3.08-1.17.6 1.55.22 2.7.1 2.98.72.8 1.16 1.83 1.16 3.08 0 4.4-2.69 5.36-5.25 5.65.42.37.79 1.1.79 2.22v3.29c0 .3.21.66.79.55C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-11.5-11.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm">GitHub</p>
+                        <p class="text-lg font-semibold"><a target="_blank" href="https://github.com/everydaycodings"
+                                class="text-gray-400">github.com/everydaycodings</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+</html>
