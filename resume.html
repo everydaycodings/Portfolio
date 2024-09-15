@@ -76,11 +76,11 @@
             <h2 class="text-4xl font-bold mb-4">Why hire me?</h2>
             <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div class="space-y-4">
-                <button
+                <button id="experienceBtn" onclick="showTabContent('experience')"
                     class="w-full py-3 bg-neutral-800 text-center  hover:bg-green-400 hover:text-black transition-all rounded-lg">
                     Experience
                 </button>
-                <button
+                <button id="educationBtn" onclick="showTabContent('education')"
                     class="w-full py-3 bg-neutral-800  text-center  hover:bg-green-400 hover:text-black transition-all rounded-lg">
                     Education
                 </button>
@@ -93,7 +93,61 @@
                 </button>
             </div>
         </div>
-        <dir class="lg:w-1/2">
+        <dir class="lg:w-1/2 tab-content hidden" id="experience">
+            <h2 class="text-4xl font-bold mb-4">My Experience</h2>
+            <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-80 overflow-y-auto">
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                    <p class="text-green-400 font-semibold">2023</p>
+                    <p class="font-semibold text-lg">Full Stack Web Development Bootcamp</p>
+                    <div class="flex items-center space-x-1 mt-2">
+                        <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                        <div class="text-xs font-normal">Online Course Platform</div>
+                    </div>
+                </div>
+            </div>
+        </dir>
+        <dir class="lg:w-1/2 tab-content hidden" id="education">
             <h2 class="text-4xl font-bold mb-4">My Education</h2>
             <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-80 overflow-y-auto">
@@ -150,6 +204,19 @@
 
     </div>
 </body>
+<script>
+    // JavaScript function to show content based on the clicked tab
+    function showTabContent(tabId) {
+        // Hide all tab content
+        var contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.add('hidden');
+        });
+
+        // Show the selected tab content
+        document.getElementById(tabId).classList.remove('hidden');
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
 </html>
