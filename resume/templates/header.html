@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../frontend/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-stone-950 text-white mb-80" style="font-family: 'Source Code Pro', monospace;">
+
+    <nav class="w-full z-20 top-0 start-0  shadow-lg">
+        <div
+            class="max-w-screen-xl flex flex-wrap items-center justify-between py-5 px-8 sm:py-10 sm:px-8 md:px-16 md:py-10 lg:px-20">
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center">
+                <p class="self-center text-2xl text-white" style="font-family: 'Chakra Petch', sans-serif;">
+                    <span>Everyday</span><span class="text-green-400">codings</span>
+                </p>
+            </a>
+
+            <!-- Get Started and Hamburger Menu (Right Section) -->
+            <div class="flex md:order-2 space-x-3 rtl:space-x-reverse">
+                <!-- Get Started Button (Hidden on small screens) -->
+                <button type="button"
+                    class="hidden md:block text-black font-medium rounded-lg text-sm px-4 py-2 text-center bg-green-400 hover:bg-green-500 transition duration-300 ease-in-out">
+                    Get started
+                </button>
+
+                <!-- Hamburger Menu Button (Visible on small screens) -->
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu (Collapsible) -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 mt-4  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:bg-transparent">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white hover:text-green-400 hover:underline-offset-3 transition duration-300">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../frontend/experience.html"
+                            class="block py-2 px-3 text-white hover:text-green-400 hover:underline-offset-3 transition duration-300">
+                            Code Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../frontend/resume.html"
+                            class="block py-2 px-3 text-white hover:text-green-400 hover:underline-offset-3 transition duration-300">
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white hover:text-green-400 hover:underline-offset-3 transition duration-300">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
