@@ -7,7 +7,7 @@
             <!-- Left Content -->
             <div class="md:w-1/2">
                 <p>
-                    Machine Learning Engineer
+                    {{ profession.value }}
                 </p>
                 <h1 class="text-6xl">
                     Hello I'm
@@ -16,28 +16,28 @@
                     Kumar Saksham
                 </h2>
                 <p class="mt-6">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book.
+                    {{ bio.value }}
                 </p>
                 <div class="mt-8 flex items-center space-x-4">
                     <!-- Download CV Button -->
-                    <button
-                        class="py-2 px-3 text-green-400 ring-1 ring-green-400 rounded-xl flex items-center space-x-2 hover:text-black hover:bg-green-400">
-                        <span>Download CV</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-download" viewBox="0 0 16 16">
-                            <path
-                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                            <path
-                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                        </svg>
-                    </button>
+                    <a target="_blank" href="{{ resume.value }}" download>
+                        <button
+                            class="py-2 px-3 text-green-400 ring-1 ring-green-400 rounded-xl flex items-center space-x-2 hover:text-black hover:bg-green-400">
+                            <span>Download CV</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-download" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                                <path
+                                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                            </svg>
+                        </button>
+                    </a>
+
 
                     <!-- Social Media Links -->
                     <div class="flex space-x-8">
-                        <a target="_blank" href="https://twitter.com" class="ml-8 text-green-400 hover:text-green-500">
+                        <a target="_blank" href="{{ twitter.value }}" class="ml-8 text-green-400 hover:text-green-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-twitter" viewBox="0 0 16 16">
                                 <path
@@ -45,7 +45,7 @@
                             </svg>
                         </a>
 
-                        <a target="_blank" href="https://linkedin.com" class="text-green-400 hover:text-green-500">
+                        <a target="_blank" href="{{ linkedin.value }}" class="text-green-400 hover:text-green-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-linkedin" viewBox="0 0 16 16">
                                 <path
@@ -53,7 +53,7 @@
                             </svg>
                         </a>
 
-                        <a target="_blank" href="https://github.com" class="text-green-400 hover:text-green-500">
+                        <a target="_blank" href="{{ github.value }}" class="text-green-400 hover:text-green-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-github" viewBox="0 0 16 16">
                                 <path
@@ -76,20 +76,20 @@
         <div id="stats">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <p class="text-4xl font-bold text-green-400 animate-pulse">12</p>
-                    <p class="mt-2 text-sm">Years of Experience</p>
+                    <p class="text-4xl font-bold text-green-400 animate-pulse">{{ experience.value }}</p>
+                    <p class="mt-2 text-sm">{{ tag1.value }}</p>
                 </div>
                 <div>
-                    <p class="text-4xl font-bold text-green-400 animate-pulse">26</p>
-                    <p class="mt-2 text-sm">Projects Completed</p>
+                    <p class="text-4xl font-bold text-green-400 animate-pulse">{{ projects.value }}</p>
+                    <p class="mt-2 text-sm">{{ tag2.value }}</p>
                 </div>
                 <div>
-                    <p class="text-4xl font-bold text-green-400 animate-pulse">8</p>
-                    <p class="mt-2 text-sm">Technologies Mastered</p>
+                    <p class="text-4xl font-bold text-green-400 animate-pulse">{{ tech.value }}</p>
+                    <p class="mt-2 text-sm">{{ tag3.value }}</p>
                 </div>
                 <div>
-                    <p class="text-4xl font-bold text-green-400 animate-pulse">500</p>
-                    <p class="mt-2 text-sm">Code Commits</p>
+                    <p class="text-4xl font-bold text-green-400 animate-pulse">{{ commits.value }}</p>
+                    <p class="mt-2 text-sm">{{ tag4.value }}</p>
                 </div>
             </div>
 
