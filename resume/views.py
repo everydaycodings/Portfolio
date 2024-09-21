@@ -8,10 +8,10 @@ from .models import StaticAssets
 def index(request):
 
     profile = get_object_or_404(StaticAssets, reference_name="profile")
-    experience = get_object_or_404(StaticAssets, reference_name="years_experience")
-    projects = get_object_or_404(StaticAssets, reference_name="projects_completed")
-    tech = get_object_or_404(StaticAssets, reference_name="known_tech")
-    commits = get_object_or_404(StaticAssets, reference_name="code_commits")
+    tag1value = get_object_or_404(StaticAssets, reference_name="tag1value")
+    tag2value = get_object_or_404(StaticAssets, reference_name="tag2value")
+    tag3value = get_object_or_404(StaticAssets, reference_name="tag3value")
+    tag4value = get_object_or_404(StaticAssets, reference_name="tag4value")
     profession = get_object_or_404(StaticAssets, reference_name="profession")
     bio = get_object_or_404(StaticAssets, reference_name="index_bio")
     twitter = get_object_or_404(StaticAssets, reference_name="twitter")
@@ -25,12 +25,9 @@ def index(request):
 
     context = {
         "profile": profile,
-        "experience": experience,
-        "projects": projects,
-        "tech": tech,
-        "commits": commits,
         "profession": profession,
         "bio": bio,
+        "resume": resume,
         "twitter": twitter,
         "linkedin": linkedin,
         "github": github,
@@ -38,7 +35,10 @@ def index(request):
         "tag2": tag2,
         "tag3": tag3,
         "tag4": tag4,
-        "resume": resume,
+        "tag1value": tag1value,
+        "tag2value": tag2value,
+        "tag3value": tag3value,
+        "tag4value": tag4value,
     }
 
     return render(request, "index.html", context=context)
