@@ -90,6 +90,23 @@ DATABASES = {
     }
 }
 
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.azure_storage.AzureStorage",
+        "OPTIONS": {
+            "connection_string": config('AZURE_CONNECTION_STRING'),
+            "azure_container": config('AZURE_MEDIA_CONTAINER'),
+        },
+    },
+    "staticfiles": {
+        "BACKEND": "storages.backends.azure_storage.AzureStorage",
+        "OPTIONS": {
+            "connection_string": config('AZURE_CONNECTION_STRING'),
+            "azure_container": config('AZURE_STATIC_CONTAINER'),
+        },
+    },
+}
+MEDIA_URL = config('MEDIA_URL')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

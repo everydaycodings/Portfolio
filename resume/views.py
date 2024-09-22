@@ -1,9 +1,12 @@
 from lib2to3.fixes.fix_input import context
 
 from decouple import config
+from django.conf import settings
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import StaticAssets
+from storages.utils import setting
+
+from .models import StaticAssets, OpenSource
 # Create your views here.
 def index(request):
 
@@ -42,3 +45,14 @@ def index(request):
     }
 
     return render(request, "index.html", context=context)
+
+
+def codeprofile(request):
+
+    open_sources = OpenSource.objects.all()
+    context = {
+        "open_sources": open_sources,
+        "media_url": settings.MEDIA_URL,
+    }
+
+    return render(request, "code_profile.html", context=context)
