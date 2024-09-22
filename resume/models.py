@@ -28,7 +28,7 @@ class StaticAssets(models.Model):
 class OpenSource(models.Model):
     number = models.CharField(null=True, blank=True)
     name = models.CharField(null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True, max_length=200)
     img = models.ImageField(upload_to=opensourse_img_destination, null=True, blank=True)
     video = models.FileField(upload_to=opensourse_video_destination, null=True, blank=True)
     tags = models.CharField(null=True, blank=True)
