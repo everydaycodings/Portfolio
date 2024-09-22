@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import StaticAssets, OpenSource
+from .models import StaticAssets, OpenSource, Competitive
 # Register your models here.
 
 admin.site.register(StaticAssets)
@@ -10,3 +10,10 @@ class OpenSourceAdmin(admin.ModelAdmin):
 
 
 admin.site.register(OpenSource, OpenSourceAdmin)
+
+
+class CompetitiveAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+
+admin.site.register(Competitive, CompetitiveAdmin)

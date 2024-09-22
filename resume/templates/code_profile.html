@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-28 lg:mx-20 lg:mt-28">
+<main class="mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-28 lg:mx-20 lg:mt-24">
         <div id="compitative-platforms">
             <h1 class="text-center text-5xl underline" style="font-family: 'Caveat', cursive;">
                 Compitative Platforms
             </h1>
             <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-white p-8 rounded-lg shadow-lg border border-green-500 max-w-sm mx-auto">
+                {% for profile in competitive %}
+                    <div class="text-white p-8 rounded-lg shadow-lg border border-green-500 max-w-sm mx-auto">
                     <h2
                         class="text-2xl font-bold mb-4 text-center text-green-400 flex items-center justify-center space-x-2">
-                        <span>LeetCode</span>
-                        <a href="https://leetcode.com/everydaycodings/" target="_blank"
+                        <span>{{ profile.name }}</span>
+                        <a href="{{ profile.url }}" target="_blank"
                             class="text-green-400 hover:text-green-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -22,81 +23,9 @@
                             </svg>
                         </a>
                     </h2>
-
-                    <p class="mb-2"><span class="font-semibold">Username:</span> everydaycodings</p>
-                    <p class="mb-2"><span class="font-semibold">Total Problem Solved:</span> <span
-                            class="text-yellow-400">450</span></p>
-                    <p class="mb-2"><span class="font-semibold">Contest Ranking:</span> <span
-                            class="text-blue-400">1586</span></p>
-                    <p class="mb-2"><span class="font-semibold">Global Ranking:</span> <span class="text-red-400">143199
-                            (24.67%)</span></p>
-                    <p class="mb-2"><span class="font-semibold">Reputation:</span> <span
-                            class="text-purple-400">65</span>
-                    </p>
-                    <p class="mb-2"><span class="font-semibold">Contribution:</span> <span
-                            class="text-teal-400">1053</span>
-                    </p>
+                    {{ profile.description | safe }}
                 </div>
-                <div class="text-white p-8 rounded-lg shadow-lg border border-green-500 max-w-sm mx-auto">
-                    <h2
-                        class="text-2xl font-bold mb-4 text-center text-green-400 flex items-center justify-center space-x-2">
-                        <span>Kaggle</span>
-                        <a href="https://leetcode.com/everydaycodings/" target="_blank"
-                            class="text-green-400 hover:text-green-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
-                                <path fill-rule="evenodd"
-                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
-                            </svg>
-                        </a>
-                    </h2>
-
-                    <p class="mb-2"><span class="font-semibold">Username:</span> everydaycodings</p>
-                    <p class="mb-2"><span class="font-semibold">Notebook:</span> <span
-                            class="text-yellow-400">1778(Max:691,Expert)</span></p>
-                    <p class="mb-2"><span class="font-semibold">Datasets:</span> <span class="text-blue-400">727 (Max:
-                            727,
-                            EXPERT)</span></p>
-                    <p class="mb-2"><span class="font-semibold">Compitition:</span> <span class="text-red-400">1778
-                            (Max:
-                            691, EXPERT)</span></p>
-                    <p class="mb-2"><span class="font-semibold">Friends:</span> <span class="text-purple-400">20</span>
-                    </p>
-                </div>
-                <div class="text-white p-8 rounded-lg shadow-lg border border-green-500 max-w-sm mx-auto">
-                    <h2
-                        class="text-2xl font-bold mb-4 text-center text-green-400 flex items-center justify-center space-x-2">
-                        <span>CodeForces</span>
-                        <a href="https://leetcode.com/everydaycodings/" target="_blank"
-                            class="text-green-400 hover:text-green-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
-                                <path fill-rule="evenodd"
-                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
-                            </svg>
-                        </a>
-                    </h2>
-
-                    <p class="mb-2"><span class="font-semibold">Username:</span> everydaycodings</p>
-                    <p class="mb-2"><span class="font-semibold">Total Problem Solved:</span> <span
-                            class="text-yellow-400">450</span></p>
-                    <p class="mb-2"><span class="font-semibold">Contest Ranking:</span> <span
-                            class="text-blue-400">1586</span></p>
-                    <p class="mb-2"><span class="font-semibold">Global Ranking:</span> <span class="text-red-400">143199
-                            (24.67%)</span></p>
-                    <p class="mb-2"><span class="font-semibold">Reputation:</span> <span
-                            class="text-purple-400">65</span>
-                    </p>
-                    <p class="mb-2"><span class="font-semibold">Contribution:</span> <span
-                            class="text-teal-400">1053</span>
-                    </p>
-                </div>
-
-
+                {% endfor %}
             </div>
         </div>
 

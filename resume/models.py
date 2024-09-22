@@ -41,3 +41,16 @@ class OpenSource(models.Model):
     class Meta:
         verbose_name = "Open Source"  # Singular form
         verbose_name_plural = "Open Source"  # Plural form
+
+
+class Competitive(models.Model):
+    name = models.CharField(null=True, blank=True)
+    url = models.URLField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Competitive Programming"  # Singular form
+        verbose_name_plural = "Competitive Programming"  # Plural form
