@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import StaticAssets, OpenSource, Competitive
+from .models import StaticAssets, OpenSource, Competitive, Education
 # Register your models here.
 
 admin.site.register(StaticAssets)
@@ -17,3 +17,10 @@ class CompetitiveAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Competitive, CompetitiveAdmin)
+
+
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ('name', 'year')
+
+
+admin.site.register(Education, EducationAdmin)

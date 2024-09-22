@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-28 lg:mx-20 lg:mt-28">
+        <div
+        class="max-w-screen-xl flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10">
+        <!-- Sidebar -->
+        <div class="md:w-1/2 lg:w-1/3">
+            <h2 class="text-4xl font-bold mb-4">Why hire me?</h2>
+            <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="space-y-4">
+                <button id="experienceBtn" onclick="showTabContent('experience')"
+                    class="w-full py-3 bg-neutral-800 text-center  hover:bg-green-400 hover:text-black transition-all rounded-lg">
+                    Experience
+                </button>
+                <button id="educationBtn" onclick="showTabContent('education')"
+                    class="w-full py-3 bg-neutral-800  text-center  hover:bg-green-400 hover:text-black transition-all rounded-lg">
+                    Education
+                </button>
+                <button
+                    class="w-full py-3 bg-neutral-800 text-center hover:bg-green-400 hover:text-black transition-all rounded-lg">
+                    Skills
+                </button>
+                <button
+                    class="w-full py-3 bg-neutral-800 text-center  hover:bg-green-400 hover:text-black transition-all rounded-lg">
+                    About me
+                </button>
+            </div>
+        </div>
+        <dir class="lg:w-1/2 tab-content " id="education" style="padding-left: 0px;">
+            <h2 class="text-4xl font-bold mb-4 text-center lg:text-left">My Education</h2>
+            <p class="mb-6 text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-80 overflow-y-auto">
+                {% for education in educations %}
+                    <div class="p-6 bg-neutral-900 rounded-md  hover:border hover:border-green-400">
+                        <p class="text-green-400 font-semibold">{{ education.year }}</p>
+                        <p class="font-semibold text-lg">{{ education.name }} <span class="inline-flex items-center"><a
+                                href="#" class="text-green-400"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg></a></span></p>
+                        <p class="text-gray-300 text-xs">{{ education.description }}</p>
+                        <div class="flex items-center space-x-1 mt-2">
+                            <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                            {% if education.online %}
+                                <div class="text-xs font-normal">Online Course Platform</div>
+                            {% else %}
+                                <div class="text-sm font-normal">{{ education.grade | safe }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </dir>
+
+    </div>
+    </main>
+
+{% endblock %}

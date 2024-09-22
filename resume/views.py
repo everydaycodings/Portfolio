@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
 from storages.utils import setting
 
-from .models import StaticAssets, OpenSource, Competitive
+from .models import StaticAssets, OpenSource, Competitive, Education
 # Create your views here.
 def index(request):
 
@@ -59,3 +59,14 @@ def codeprofile(request):
     }
 
     return render(request, "code_profile.html", context=context)
+
+
+def resume(request):
+
+    educations = Education.objects.all().order_by('-id')
+
+    context = {
+        "educations": educations,
+    }
+
+    return render(request, "resume.html", context=context)

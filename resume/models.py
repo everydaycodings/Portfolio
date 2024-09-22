@@ -54,3 +54,19 @@ class Competitive(models.Model):
     class Meta:
         verbose_name = "Competitive Programming"  # Singular form
         verbose_name_plural = "Competitive Programming"  # Plural form
+
+
+class Education(models.Model):
+    year = models.CharField(null=True, blank=True)
+    name = models.CharField(null=True, blank=True)
+    url = models.CharField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True, max_length=150)
+    grade = models.CharField(null=True, blank=True)
+    online = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Education"
+        verbose_name_plural = "Education"
