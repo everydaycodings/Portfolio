@@ -8,6 +8,9 @@ def opensourse_img_destination(instance, filename):
 def opensourse_video_destination(instance, filename):
     return f'assets/opensource/videos/{filename}'
 
+def extra_file_destination(instance, filename):
+    return f'assets/extra/{filename}'
+
 
 
 # Create your models here.
@@ -70,3 +73,47 @@ class Education(models.Model):
     class Meta:
         verbose_name = "Education"
         verbose_name_plural = "Education"
+
+
+class Experience(models.Model):
+    year = models.CharField(null=True, blank=True)
+    name = models.CharField(null=True, blank=True)
+    url = models.CharField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True, max_length=150)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Experience"
+        verbose_name_plural = "Experiences"
+
+
+class Skill(models.Model):
+    name = models.CharField(null=True, blank=True)
+    description = models.CharField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Skill"
+        verbose_name_plural = "Skills"
+
+
+class Extra(models.Model):
+    reference = models.CharField(null=True, blank=True)
+    tag1 = models.CharField(null=True, blank=True)
+    tag2 = models.TextField(null=True, blank=True)
+    tag3 = models.CharField(null=True, blank=True)
+    tag4 = models.IntegerField(null=True, blank=True)
+    tag5 = models.BooleanField(null=True, blank=True)
+    file = models.FileField(upload_to=extra_file_destination, null=True, blank=True)
+    tag6 = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.reference
+
+    class Meta:
+        verbose_name = "Extra"
+        verbose_name_plural = "Extra"

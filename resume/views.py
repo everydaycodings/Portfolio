@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
 from storages.utils import setting
 
-from .models import StaticAssets, OpenSource, Competitive, Education
+from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra
 # Create your views here.
 def index(request):
 
@@ -64,9 +64,26 @@ def codeprofile(request):
 def resume(request):
 
     educations = Education.objects.all().order_by('-id')
+    experiences = Experience.objects.all().order_by('-id')
+    skills = Skill.objects.all().order_by('id')
+    aboutme = get_object_or_404(Extra, reference="aboutme")
+
+    whyhireme = get_object_or_404(Extra, reference="whyhireme")
+    myeducationdesc = get_object_or_404(Extra, reference="myeducationdesc")
+    myexperiencedesc = get_object_or_404(Extra, reference="myexperiencedesc")
+    myskillsdesc = get_object_or_404(Extra, reference="myskillsdesc")
+    aboutmedesc = get_object_or_404(Extra, reference="aboutmedesc")
 
     context = {
         "educations": educations,
+        "experiences": experiences,
+        "skills": skills,
+        "aboutme": aboutme,
+        "whyhireme": whyhireme,
+        "myeducationdesc": myeducationdesc,
+        "myexperiencedesc": myexperiencedesc,
+        "myskillsdesc": myskillsdesc,
+        "aboutmedesc": aboutmedesc,
     }
 
     return render(request, "resume.html", context=context)
