@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-24 lg:mx-20 lg:mt-24">
+        <div id="contact-form" class="flex flex-col lg:flex-row">
+            <!-- Form Section -->
+            <div class="w-full lg:w-1/2 p-8 bg-neutral-900/75 rounded-lg shadow-lg">
+                <p class="text-green-400 text-3xl font-bold">Let's Work Together</p>
+                <p class="text-gray-300 text-sm mt-4 leading-relaxed">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.
+                </p>
+
+                <!-- Name Input -->
+                <div class="input-section mt-8">
+                    <label for="name" class="text-gray-400 text-sm">Name</label>
+                    <input
+                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                        type="text" name="name" id="name" placeholder="Enter your name" aria-label="Enter your name">
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-section mt-6">
+                    <label for="email" class="text-gray-400 text-sm">Email</label>
+                    <input
+                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                        type="email" name="email" id="email" placeholder="Enter your email"
+                        aria-label="Enter your email">
+                </div>
+
+                <!-- Phone Number Input -->
+                <div class="input-section mt-6">
+                    <label for="phone" class="text-gray-400 text-sm">Phone Number</label>
+                    <input
+                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                        type="tel" name="phone" id="phone" placeholder="Enter your phone number"
+                        aria-label="Enter your phone number">
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="input-section mt-6">
+                    <label for="message" class="text-gray-400 text-sm">Message</label>
+                    <textarea
+                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                        name="message" id="message" rows="5" placeholder="Enter your message"
+                        aria-label="Enter your message"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    class="mt-6 w-full p-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition duration-300 ease-in-out shadow-lg">
+                    Send Message
+                </button>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="w-full lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
+                <div
+                    class="flex flex-col items-start justify-center p-8 bg-neutral-900/75 rounded-lg shadow-lg text-gray-300 space-y-6">
+                    <!-- Email Section -->
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-stone-950 rounded-full">
+                            <svg class="w-6 h-6 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M2.999 3c0-.551.449-1 1-1h16c.552 0 1 .449 1 1v18c0 .551-.448 1-1 1H3.999c-.552 0-1-.449-1-1V3zm9 10.5c-.055.018-.11.038-.167.038H11.165c-.055 0-.11-.02-.167-.038l-8-4c-.033-.015-.063-.035-.096-.052v10.552h16V9.448c-.034.017-.064.037-.097.052l-8 4zm7.5-5.448L12.501 11.7 4.499 8.052V5h14v2.052z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm">Primary Email</p>
+                            <p class="text-lg font-semibold">everydaycodings@email.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Email Section -->
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-stone-950 rounded-full">
+                            <svg class="w-6 h-6 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M2.999 3c0-.551.449-1 1-1h16c.552 0 1 .449 1 1v18c0 .551-.448 1-1 1H3.999c-.552 0-1-.449-1-1V3zm9 10.5c-.055.018-.11.038-.167.038H11.165c-.055 0-.11-.02-.167-.038l-8-4c-.033-.015-.063-.035-.096-.052v10.552h16V9.448c-.034.017-.064.037-.097.052l-8 4zm7.5-5.448L12.501 11.7 4.499 8.052V5h14v2.052z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm">Secondary Email</p>
+                            <p class="text-lg font-semibold">kumarsaksham1891@email.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Twitter Section -->
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-stone-950 rounded-full">
+                            <svg class="w-6 h-6 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M24 4.557a9.94 9.94 0 01-2.828.775 4.937 4.937 0 002.165-2.723c-.951.563-2.005.974-3.127 1.195a4.92 4.92 0 00-8.384 4.482 13.963 13.963 0 01-10.141-5.15 4.822 4.822 0 00-.666 2.475 4.92 4.92 0 002.19 4.107 4.903 4.903 0 01-2.228-.616v.061a4.926 4.926 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.926 4.926 0 004.602 3.417A9.869 9.869 0 010 21.54a13.945 13.945 0 007.548 2.212c9.142 0 14.307-7.721 14.307-14.426 0-.22-.005-.44-.015-.659A10.257 10.257 0 0024 4.557z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm">Twitter</p>
+                            <p class="text-lg font-semibold"><a target="_blank"
+                                    href="https://twitter.com/everydaycodings"
+                                    class="text-blue-400">twitter.com/everydaycodings</a></p>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Section -->
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-stone-950 rounded-full">
+                            <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.579 20h-3.421v-10h3.421v10zm-1.711-11.309c-1.098 0-1.989-.891-1.989-1.992 0-1.102.89-1.992 1.989-1.992s1.989.89 1.989 1.992c0 1.102-.89 1.992-1.989 1.992zm13.29 11.309h-3.421v-5.622c0-1.336-.026-3.054-1.862-3.054-1.862 0-2.148 1.454-2.148 2.957v5.719h-3.421v-10h3.283v1.364h.047c.457-.864 1.576-1.774 3.243-1.774 3.466 0 4.107 2.28 4.107 5.242v5.168z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm">LinkedIn</p>
+                            <p class="text-lg font-semibold"><a target="_blank"
+                                    href="https://linkedin.com/in/kumarsaksham1891"
+                                    class="text-blue-600">linkedin.com/in/kumarsaksham1891</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
