@@ -117,3 +117,17 @@ class Extra(models.Model):
     class Meta:
         verbose_name = "Extra"
         verbose_name_plural = "Extra"
+
+
+class ContactUs(models.Model):
+    name = models.CharField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    phone = models.CharField(null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Contact Us"
+        verbose_name_plural = "Contact Us"

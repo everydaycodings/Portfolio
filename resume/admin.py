@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra
+from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra, ContactUs
 # Register your models here.
 
 admin.site.register(StaticAssets)
@@ -45,3 +45,10 @@ class ExtraInfoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Extra, ExtraInfoAdmin)
+
+
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email')
+
+
+admin.site.register(ContactUs, ContactUsAdmin)

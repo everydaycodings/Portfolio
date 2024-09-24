@@ -5,54 +5,59 @@
 <main class="mt-24 mx-8 sm:mt-10 sm:mx-8 md:mx-16 md:mt-24 lg:mx-20 lg:mt-24">
         <div id="contact-form" class="flex flex-col lg:flex-row">
             <!-- Form Section -->
-            <div class="w-full lg:w-1/2 p-8 bg-neutral-900/75 rounded-lg shadow-lg">
-                <p class="text-green-400 text-3xl font-bold">Let's Work Together</p>
-                <p class="text-gray-300 text-sm mt-4 leading-relaxed">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.
-                </p>
 
-                <!-- Name Input -->
-                <div class="input-section mt-8">
-                    <label for="name" class="text-gray-400 text-sm">Name</label>
-                    <input
-                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
-                        type="text" name="name" id="name" placeholder="Enter your name" aria-label="Enter your name">
+                <div class="w-full lg:w-1/2 p-8 bg-neutral-900/75 rounded-lg shadow-lg">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <p class="text-green-400 text-3xl font-bold">Let's Work Together</p>
+                        <p class="text-gray-300 text-sm mt-4 leading-relaxed">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s.
+                        </p>
+
+                        <!-- Name Input -->
+                        <div class="input-section mt-8">
+                            <label for="name" class="text-gray-400 text-sm">Name</label>
+                            <input
+                                class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                                value="{{ name }}" type="text" name="name" id="id_name" placeholder="Enter your name" aria-label="Enter your name" required>
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="input-section mt-6">
+                            <label for="email" class="text-gray-400 text-sm">Email</label>
+                            <input
+                                class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                                value="{{ email }}" type="email" name="email" id="id_email" placeholder="Enter your email" required
+                                aria-label="Enter your email">
+                        </div>
+
+                        <!-- Phone Number Input -->
+                        <div class="input-section mt-6">
+                            <label for="phone" class="text-gray-400 text-sm">Phone Number</label>
+                            <input
+                                class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                                value="{{ phone }}" type="tel" name="phone" id="id_phone" placeholder="Enter your phone number"
+                                aria-label="Enter your phone number">
+                        </div>
+
+                        <!-- Message Textarea -->
+                        <div class="input-section mt-6">
+                            <label for="message" class="text-gray-400 text-sm">Message</label>
+                            <textarea
+                                class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
+                                value="{{ message }}" name="message" id="id_message" rows="5" placeholder="Enter your message" required
+                                aria-label="Enter your message"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button name="submit-feedback" type="submit"
+                            class="mt-6 w-full p-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition duration-300 ease-in-out shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Email Input -->
-                <div class="input-section mt-6">
-                    <label for="email" class="text-gray-400 text-sm">Email</label>
-                    <input
-                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
-                        type="email" name="email" id="email" placeholder="Enter your email"
-                        aria-label="Enter your email">
-                </div>
-
-                <!-- Phone Number Input -->
-                <div class="input-section mt-6">
-                    <label for="phone" class="text-gray-400 text-sm">Phone Number</label>
-                    <input
-                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
-                        type="tel" name="phone" id="phone" placeholder="Enter your phone number"
-                        aria-label="Enter your phone number">
-                </div>
-
-                <!-- Message Textarea -->
-                <div class="input-section mt-6">
-                    <label for="message" class="text-gray-400 text-sm">Message</label>
-                    <textarea
-                        class="w-full mt-2 p-3 bg-stone-950 text-gray-200 border border-green-400 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none shadow-md"
-                        name="message" id="message" rows="5" placeholder="Enter your message"
-                        aria-label="Enter your message"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button
-                    class="mt-6 w-full p-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition duration-300 ease-in-out shadow-lg">
-                    Send Message
-                </button>
-            </div>
 
             <!-- Contact Info Section -->
             <div class="w-full lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
@@ -69,7 +74,7 @@
                         </div>
                         <div>
                             <p class="text-sm">Primary Email</p>
-                            <p class="text-lg font-semibold">everydaycodings@email.com</p>
+                            <p class="text-lg font-semibold">{{ email1.value }}</p>
                         </div>
                     </div>
 
@@ -84,7 +89,7 @@
                         </div>
                         <div>
                             <p class="text-sm">Secondary Email</p>
-                            <p class="text-lg font-semibold">kumarsaksham1891@email.com</p>
+                            <p class="text-lg font-semibold">{{ email2.value }}</p>
                         </div>
                     </div>
 
@@ -100,7 +105,7 @@
                         <div>
                             <p class="text-sm">Twitter</p>
                             <p class="text-lg font-semibold"><a target="_blank"
-                                    href="https://twitter.com/everydaycodings"
+                                    href="{{ twitter.value }}"
                                     class="text-blue-400">twitter.com/everydaycodings</a></p>
                         </div>
                     </div>
@@ -117,7 +122,7 @@
                         <div>
                             <p class="text-sm">LinkedIn</p>
                             <p class="text-lg font-semibold"><a target="_blank"
-                                    href="https://linkedin.com/in/kumarsaksham1891"
+                                    href="{{ linkdin.value }}"
                                     class="text-blue-600">linkedin.com/in/kumarsaksham1891</a></p>
                         </div>
                     </div>

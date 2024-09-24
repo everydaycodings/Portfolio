@@ -7,5 +7,6 @@ urlpatterns = [
     path('CodeProfile', views.codeprofile, name="codeprofile"),
     path('Resume', views.resume, name="resume"),
     path('Contact', views.contact, name="contact"),
+    path('Contact-Success', views.contactsuccess, name="contact_success"),
 
 ]

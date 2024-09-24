@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from storages.utils import setting
 
 from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra
+from .forms import ContactUsForm
 # Create your views here.
 def index(request):
 
@@ -89,5 +90,27 @@ def resume(request):
     return render(request, "resume.html", context=context)
 
 
+def contactsuccess(request):
+    return render(request, "contact_success.html")
+
 def contact(request):
-    return render(request, "contact.html")
+    if request.method == "POST":
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('contact_success')
+
+    email1 = get_object_or_404(StaticAssets, reference_name="email1")
+    email2 = get_object_or_404(StaticAssets, reference_name="email2")
+    linkedin = get_object_or_404(StaticAssets, reference_name="linkedin")
+    twitter = get_object_or_404(StaticAssets, reference_name="twitter")
+
+    context = {
+        "email1": email1,
+        "email2": email2,
+        "linkdin": linkedin,
+        "twitter": twitter,
+    }
+
+    return render(request, "contact.html", context=context)
