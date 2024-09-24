@@ -35,10 +35,10 @@
             <!-- Get Started and Hamburger Menu (Right Section) -->
             <div class="flex md:order-2 space-x-3 rtl:space-x-reverse">
                 <!-- Get Started Button (Hidden on small screens) -->
-                <button type="button"
+                <a href="{% url 'article' %}"
                     class="hidden md:block text-black font-medium rounded-lg text-sm px-4 py-2 text-center bg-green-400 hover:bg-green-500 transition duration-300 ease-in-out">
-                    Get started
-                </button>
+                    Read Articles
+                </a>
 
                 <!-- Hamburger Menu Button (Visible on small screens) -->
                 <button data-collapse-toggle="navbar-sticky" type="button"

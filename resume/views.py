@@ -129,3 +129,7 @@ def contact(request):
     }
 
     return render(request, "contact.html", context=context)
+
+
+def article(request):
+    return render(request, "articles.html")
