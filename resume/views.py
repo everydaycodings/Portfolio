@@ -1,5 +1,4 @@
 from lib2to3.fixes.fix_input import context
-
 from decouple import config
 from django.conf import settings
 from django.shortcuts import render
@@ -7,8 +6,13 @@ from django.shortcuts import get_object_or_404, redirect, render
 from storages.utils import setting
 from django.core.mail import send_mail
 from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra
+from django.views.decorators.cache import cache_page
 from .forms import ContactUsForm
+
+cache_time = 60 * config('CACHE_TIME', cast=int)
+
 # Create your views here.
+@cache_page(60 * cache_time)
 def index(request):
 
     profile = get_object_or_404(StaticAssets, reference_name="profile")
@@ -47,7 +51,7 @@ def index(request):
 
     return render(request, "index.html", context=context)
 
-
+@cache_page(60 * cache_time)
 def codeprofile(request):
 
     open_sources = OpenSource.objects.all()
@@ -61,7 +65,7 @@ def codeprofile(request):
 
     return render(request, "code_profile.html", context=context)
 
-
+@cache_page(60 * cache_time)
 def resume(request):
 
     educations = Education.objects.all().order_by('-id')
@@ -89,10 +93,12 @@ def resume(request):
 
     return render(request, "resume.html", context=context)
 
-
+@cache_page(60 * cache_time)
 def contactsuccess(request):
     return render(request, "contact_success.html")
 
+
+@cache_page(60 * cache_time)
 def contact(request):
     if request.method == "POST":
         form = ContactUsForm(request.POST)
@@ -131,5 +137,6 @@ def contact(request):
     return render(request, "contact.html", context=context)
 
 
+@cache_page(60 * cache_time)
 def article(request):
     return render(request, "articles.html")
