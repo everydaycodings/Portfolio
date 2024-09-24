@@ -5,7 +5,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
 from storages.utils import setting
-
+from django.core.mail import send_mail
 from .models import StaticAssets, OpenSource, Competitive, Education, Experience, Skill, Extra
 from .forms import ContactUsForm
 # Create your views here.
@@ -98,6 +98,21 @@ def contact(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             form.save()
+
+            message_content = form.cleaned_data.get('message')
+            sender = form.cleaned_data.get('email')
+            send_mail(
+                subject = "New Message Form Portfolio",
+                message = f"""
+                                A Message Has been sent By: {sender}
+                                
+                                {message_content}
+    
+                            """,
+                from_email = settings.DEFAULT_FROM_EMAIL,
+                recipient_list = [settings.ADMIN_EMAIL1, settings.ADMIN_EMAIL2],
+                fail_silently = True,
+            )
 
             return redirect('contact_success')
 
