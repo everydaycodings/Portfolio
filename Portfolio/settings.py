@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from dotenv import load_dotenv
+import os
 
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.getenv('DEBUG', "False").lower() in ('True', 'true')
 
 ALLOWED_HOSTS = []
 
@@ -81,11 +84,11 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config('DB_NAME'),
-        "USER": config('DB_USER'),
-        "PASSWORD": config('DB_PASSWORD'),
-        "HOST": config('DB_HOST'),
-        "PORT": config('DB_PORT'),
+        "NAME": os.getenv('DB_NAME'),
+        "USER": os.getenv('DB_USER'),
+        "PASSWORD": os.getenv('DB_PASSWORD'),
+        "HOST": os.getenv('DB_HOST'),
+        "PORT": os.getenv('DB_PORT'),
         "OPTIONS":{
             "sslmode": "require"
         },
@@ -94,21 +97,21 @@ DATABASES = {
 
 STORAGES = {
     "default": {
-        "BACKEND": "storages.backends.azure_storage.AzureStorage",
+        "BACKEND": os.getenv('DEFAULT_STORAGE_BACKEND'),
         "OPTIONS": {
-            "connection_string": config('AZURE_CONNECTION_STRING'),
-            "azure_container": config('AZURE_MEDIA_CONTAINER'),
+            "connection_string": os.getenv('AZURE_CONNECTION_STRING'),
+            "azure_container": os.getenv('AZURE_MEDIA_CONTAINER'),
         },
     },
     "staticfiles": {
-        "BACKEND": "storages.backends.azure_storage.AzureStorage",
+        "BACKEND": os.getenv('STATICFILES_STORAGE_BACKEND'),
         "OPTIONS": {
-            "connection_string": config('AZURE_CONNECTION_STRING'),
-            "azure_container": config('AZURE_STATIC_CONTAINER'),
+            "connection_string": os.getenv('AZURE_CONNECTION_STRING'),
+            "azure_container": os.getenv('AZURE_STATIC_CONTAINER'),
         },
     },
 }
-MEDIA_URL = config('MEDIA_URL')
+MEDIA_URL = os.getenv('MEDIA_URL')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -160,12 +163,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
-ADMIN_EMAIL1 = config('ADMIN_EMAIL1')
-ADMIN_EMAIL2 = config('ADMIN_EMAIL2')
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT'))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', "True").lower() in ('True', 'true')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+ADMIN_EMAIL1 = os.getenv('ADMIN_EMAIL1')
+ADMIN_EMAIL2 = os.getenv('ADMIN_EMAIL2')

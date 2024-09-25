@@ -1,5 +1,6 @@
+import os
 from lib2to3.fixes.fix_input import context
-from decouple import config
+from dotenv import load_dotenv
 from django.conf import settings
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
@@ -9,7 +10,9 @@ from .models import StaticAssets, OpenSource, Competitive, Education, Experience
 from django.views.decorators.cache import cache_page
 from .forms import ContactUsForm
 
-cache_time = 60 * config('CACHE_TIME', cast=int)
+load_dotenv()
+
+cache_time = 60 * int(os.getenv('CACHE_TIME'))
 
 # Create your views here.
 @cache_page(60 * cache_time)
