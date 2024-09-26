@@ -75,18 +75,45 @@ The `.env` file should contain the following environment variables:
 # .env
 
 # Database configuration
-DATABASE_NAME=your-database-name
-DATABASE_USER=your-database-user
-DATABASE_PASSWORD=your-database-password
-DATABASE_HOST=your-database-host
-DATABASE_PORT=your-database-port
+# Django Credentials
+SECRET_KEY=''
+DEBUG=True
 
-# Azure storage configuration
-DEFAULT_STORAGE_BACKEND=storages.backends.azure_storage.AzureStorage
-STATICFILES_STORAGE_BACKEND=storages.backends.azure_storage.AzureStaticStorage
-AZURE_CONNECTION_STRING=your-azure-connection-string
-AZURE_MEDIA_CONTAINER=your-media-container-name
-AZURE_STATIC_CONTAINER=your-static-container-name
+# Azure Dtabase
+DB_NAME=''
+DB_USER=''
+DB_PASSWORD=''
+DB_HOST = ''
+DB_PORT = ''
+
+
+# Azure File Storage Settings
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+STATICFILES_STORAGE_BACKEND = 'storages.backends.azure_storage.AzureStorage'
+MEDIA_URL = ''
+AZURE_ACCOUNT_NAME = ''
+AZURE_ACCOUNT_KEY = ''
+AZURE_MEDIA_CONTAINER = ''
+AZURE_STATIC_CONTAINER = ''
+AZURE_CONNECTION_STRING = ''
+
+
+# Email Credentials
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
+ADMIN_EMAIL1 = ''
+ADMIN_EMAIL2 = ''
+
+
+# Cache Settings
+
+# Cache time in minutes
+CACHE_TIME = 15
 ```
 
 You can adapt the values to match your Azure account and storage settings.
