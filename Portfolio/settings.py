@@ -138,6 +138,7 @@ CACHES = {
         'LOCATION': 'default_cache',  # The table name in the DB
     }
 }
+CACHE_TIMEOUT = 60 * int(os.getenv('CACHE_TIME'))
 
 
 
