@@ -97,7 +97,7 @@ DATABASES = {
 
 STORAGES = {
     "default": {
-        "BACKEND": os.getenv('DEFAULT_STORAGE_BACKEND'),
+        "BACKEND": os.getenv('DEFAULT_FILE_STORAGE'),
         "OPTIONS": {
             "connection_string": os.getenv('AZURE_CONNECTION_STRING'),
             "azure_container": os.getenv('AZURE_MEDIA_CONTAINER'),
@@ -134,10 +134,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': '',
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'default_cache',  # The table name in the DB
     }
 }
+
 
 
 # Internationalization

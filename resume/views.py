@@ -57,7 +57,7 @@ def index(request):
 @cache_page(60 * cache_time)
 def codeprofile(request):
 
-    open_sources = OpenSource.objects.all()
+    open_sources = OpenSource.objects.filter(published=True)
     competitive = Competitive.objects.all().order_by('-id')
 
     context = {

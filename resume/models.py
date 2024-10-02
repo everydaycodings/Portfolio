@@ -37,6 +37,7 @@ class OpenSource(models.Model):
     tags = models.CharField(null=True, blank=True)
     url = models.URLField(null=True, blank=True)
     preview = models.URLField(null=True, blank=True)
+    published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
